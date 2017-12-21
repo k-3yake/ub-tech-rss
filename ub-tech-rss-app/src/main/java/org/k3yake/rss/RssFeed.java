@@ -15,6 +15,11 @@ public class RssFeed {
         return text;
     }
 
+    public RssFeed convert(NpRemoveConverter npRemoveConverter) {
+        return npRemoveConverter.convert(this);
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
