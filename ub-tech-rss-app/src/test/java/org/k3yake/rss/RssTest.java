@@ -1,9 +1,6 @@
 package org.k3yake.rss;
 
 import org.junit.Test;
-
-import java.io.IOException;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
