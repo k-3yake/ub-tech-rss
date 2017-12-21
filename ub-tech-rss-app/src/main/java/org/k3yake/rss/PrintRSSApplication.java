@@ -6,12 +6,9 @@ package org.k3yake.rss;
 public class PrintRSSApplication {
 
     public static void main(String[] args){
-        try{
-            RssUrl rssUrl = new RssUrlCreater().create("http://localhost:8080/rss/");
-            RssFeed rssFeed = new RssReader(new HttpClient()).get(rssUrl);
-            new RssWriter().write(rssFeed);
-        }catch(Throwable e){
-            e.printStackTrace();
-        }
+        String url =  args[0];
+        RssUrl rssUrl = new RssUrlCreater().create(url);
+        RssFeed rssFeed = new RssReader(new HttpClient()).get(rssUrl).convert(new NpRemoveConverter());
+        new RssWriter().write(rssFeed);
     }
 }

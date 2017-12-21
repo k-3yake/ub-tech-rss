@@ -27,7 +27,7 @@ public class E2eTest {
     }
 
     private String execApplication(String targetJarPath) throws IOException, InterruptedException {
-        ProcessBuilder pb = new ProcessBuilder("java","-jar",targetJarPath);
+        ProcessBuilder pb = new ProcessBuilder("java","-jar",targetJarPath,"http://localhost:8080/rss");
         Process process = pb.start();
         process.waitFor();
         return IOUtils.toString(process.getInputStream(), UTF_8);
