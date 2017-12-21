@@ -14,7 +14,7 @@ public class RssReader {
         this.httpClient = httpClient;
     }
 
-    public RssFeed get(Url url) throws IOException {
+    public RssFeed get(RssUrl url) {
         return new RssFeed(httpClient.get(url.toString()));
     }
 }

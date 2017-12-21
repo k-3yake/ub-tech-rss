@@ -3,11 +3,11 @@ package org.k3yake.rss;
 /**
  * Created by katsuki on 17/12/22.
  */
-public class Url {
+public class RssUrl {
 
     private final String url;
 
-    public Url(String url) {
+    public RssUrl(String url) {
         this.url = url;
     }
 

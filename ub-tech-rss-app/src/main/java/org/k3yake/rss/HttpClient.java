@@ -14,25 +14,20 @@ import java.io.IOException;
  */
 public class HttpClient {
 
-    public String get(String url) throws IOException {
-        CloseableHttpClient client = HttpClients.createDefault();
-        try {
+    public String get(String url)  {
+        try(CloseableHttpClient client = HttpClients.createDefault()) {
             HttpGet get = new HttpGet(url);
             CloseableHttpResponse response = client.execute(get);
             int sc = response.getStatusLine().getStatusCode(); //. 200 の想定
             HttpEntity entity = response.getEntity();
             return EntityUtils.toString(entity, "UTF-8");
-        }finally {
-            client.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void main(String[] args){
-        try {
-            System.out.println(new HttpClient().get("https://www.yahoo.co.jp/"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println(new HttpClient().get("https://www.yahoo.co.jp/"));
     }
 
 }

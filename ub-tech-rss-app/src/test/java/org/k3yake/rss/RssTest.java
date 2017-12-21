@@ -13,9 +13,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class RssTest {
 
     @Test
-    public void RSS取得のテスト_与えられたURLからRSSを取得する() throws IOException {
+    public void RSS取得のテスト_与えられたURLからRSSを取得する() {
         RssReader rssReader = new RssReader(new HttpClientMock());
-        assertThat(rssReader.get(new Url("urlVal")),is(new RssFeed("inputText")));
+        assertThat(rssReader.get(new RssUrl("urlVal")),is(new RssFeed("inputText")));
     }
 
     private static class HttpClientMock extends HttpClient{
