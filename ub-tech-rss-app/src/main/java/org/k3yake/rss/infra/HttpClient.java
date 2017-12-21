@@ -1,4 +1,4 @@
-package org.k3yake.rss;
+package org.k3yake.rss.infra;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;

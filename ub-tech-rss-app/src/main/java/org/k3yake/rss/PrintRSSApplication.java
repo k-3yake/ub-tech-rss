@@ -1,5 +1,9 @@
 package org.k3yake.rss;
 
+import org.k3yake.rss.infra.HttpClient;
+import org.k3yake.rss.rssFeed.NpRemoveConverter;
+import org.k3yake.rss.rssFeed.RssFeed;
+
 /**
  * Created by katsuki on 17/12/22.
  */

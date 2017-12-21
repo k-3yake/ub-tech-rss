@@ -1,4 +1,4 @@
-package org.k3yake.rss;
+package org.k3yake.rss.rssFeed;
 
 /**
  * Created by katsuki on 17/12/22.

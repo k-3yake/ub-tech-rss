@@ -1,6 +1,9 @@
 package org.k3yake.rss;
 
 import org.junit.Test;
+import org.k3yake.rss.infra.HttpClient;
+import org.k3yake.rss.rssFeed.RssFeed;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -15,7 +18,7 @@ public class RssTest {
         assertThat(rssReader.get(new RssUrl("urlVal")),is(new RssFeed("inputText")));
     }
 
-    private static class HttpClientMock extends HttpClient{
+    private static class HttpClientMock extends HttpClient {
         @Override
         public String get(String url){
             assertThat(url,is("urlVal"));
