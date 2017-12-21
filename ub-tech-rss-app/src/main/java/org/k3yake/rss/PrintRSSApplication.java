@@ -13,17 +13,10 @@ import org.apache.http.util.EntityUtils;
 public class PrintRSSApplication {
 
     public static void main(String[] args){
-        String url = "http://localhost:8080/rss/";
-
         try{
-            CloseableHttpClient client = HttpClients.createDefault();
-            HttpGet get = new HttpGet( url );
-            CloseableHttpResponse response = client.execute( get );
-            int sc = response.getStatusLine().getStatusCode(); //. 200 の想定
-            HttpEntity entity = response.getEntity();
-            String html = EntityUtils.toString( entity, "UTF-8" );
-            System.out.println( html.replaceAll("NewsPicks","") ); //. 取得結果をコンソールへ
-            client.close();
+            String url = "http://localhost:8080/rss/";
+            RssFeed rssFeed = new RssReader(new HttpClient()).get(new Url(url));
+            System.out.println( rssFeed.getText().replaceAll("NewsPicks","") ); //. 取得結果をコンソールへ
         }catch( Exception e ){
             e.printStackTrace();
         }
