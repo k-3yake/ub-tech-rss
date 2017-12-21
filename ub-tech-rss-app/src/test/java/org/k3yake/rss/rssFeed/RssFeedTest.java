@@ -1,4 +1,4 @@
-package org.k3yake.rss;
+package org.k3yake.rss.rssFeed;
 
 import org.junit.Test;
 import org.k3yake.rss.rssFeed.NpRemoveConverter;
