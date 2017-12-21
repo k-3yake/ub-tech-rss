@@ -6,6 +6,6 @@ package org.k3yake.rss;
 public class PrintRSSApplication {
 
     public static void main(String[] args){
-        System.out.println("beforeafter");
+        System.out.println("ほげ");
     }
 }
