@@ -8,7 +8,7 @@ import org.k3yake.rss.rss.RssFeed;
 public class NpRemoveConverter implements RssConverter{
 
     public RssFeed convert(RssFeed rssFeed){
-        return  new RssFeed(rssFeed.getText().replaceAll("NewsPicks",""));
+        return new RssFeed(rssFeed.getText().replaceAll("NewsPicks",""));
     }
 
 }

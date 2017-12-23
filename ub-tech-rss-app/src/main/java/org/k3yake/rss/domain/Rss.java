@@ -1,6 +1,5 @@
 package org.k3yake.rss.rss;
 
-import org.k3yake.rss.rss.converter.NpRemoveConverter;
 import org.k3yake.rss.rss.converter.RssConverter;
 
 /**
@@ -9,16 +8,16 @@ import org.k3yake.rss.rss.converter.RssConverter;
 public class Rss {
     private String name;
     private RssFeed feed;
-    private RssConverter npRemoveConverter;
+    private RssConverter rssConverter;
 
-    Rss(String name, RssFeed rssFeed, RssConverter npRemoveConverter) {
+    Rss(String name, RssFeed rssFeed, RssConverter rssConverter) {
         this.name = name;
         this.feed = rssFeed;
-        this.npRemoveConverter = npRemoveConverter;
+        this.rssConverter = rssConverter;
     }
 
-    public RssFeed getFeed() {
-        return this.feed.convert(npRemoveConverter);
+    public String getFeed() {
+        return feed.convert(rssConverter).getText();
     }
 
     @Override
@@ -30,14 +29,14 @@ public class Rss {
 
         if (name != null ? !name.equals(rss.name) : rss.name != null) return false;
         if (feed != null ? !feed.equals(rss.feed) : rss.feed != null) return false;
-        return npRemoveConverter != null ? npRemoveConverter.equals(rss.npRemoveConverter) : rss.npRemoveConverter == null;
+        return rssConverter != null ? rssConverter.equals(rss.rssConverter) : rss.rssConverter == null;
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (feed != null ? feed.hashCode() : 0);
-        result = 31 * result + (npRemoveConverter != null ? npRemoveConverter.hashCode() : 0);
+        result = 31 * result + (rssConverter != null ? rssConverter.hashCode() : 0);
         return result;
     }
 
@@ -46,7 +45,7 @@ public class Rss {
         return "Rss{" +
                 "name='" + name + '\'' +
                 ", feed=" + feed +
-                ", npRemoveConverter=" + npRemoveConverter +
+                ", rssConverter=" + rssConverter +
                 '}';
     }
 }

@@ -18,8 +18,8 @@ public class RssFeed {
         return text;
     }
 
-    public RssFeed convert(RssConverter npRemoveConverter) {
-        return npRemoveConverter.convert(this);
+    RssFeed convert(RssConverter rssConverter) {
+        return rssConverter.convert(this);
     }
 
 

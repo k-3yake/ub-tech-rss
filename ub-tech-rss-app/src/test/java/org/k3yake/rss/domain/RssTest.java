@@ -14,7 +14,7 @@ public class RssTest {
     @Test
     public void RssFeed取得のテスト_指定されたConverterにしたがってFeedを返す(){
         NpRemoveConverter npRemoveConverter = new NpRemoveConverterMock();
-        assertThat(new Rss("test",new RssFeed("aNewsPicksa"),npRemoveConverter).getFeed(),is(new RssFeed("converted")));
+        assertThat(new Rss("test",new RssFeed("aNewsPicksa"),npRemoveConverter).getFeed(),is("converted"));
     }
 
     private static class NpRemoveConverterMock extends NpRemoveConverter{
