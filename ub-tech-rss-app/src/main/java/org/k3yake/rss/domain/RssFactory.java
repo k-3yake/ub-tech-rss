@@ -1,7 +1,7 @@
-package org.k3yake.rss.rss;
+package org.k3yake.rss.domain;
 
 import org.k3yake.rss.infra.HttpClient;
-import org.k3yake.rss.rss.converter.ConverterFactory;
+import org.k3yake.rss.domain.converter.ConverterFactory;
 
 /**
  * Created by katsuki-miyake on 17/12/24.

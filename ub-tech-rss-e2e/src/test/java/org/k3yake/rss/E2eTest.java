@@ -42,7 +42,13 @@ public class E2eTest {
     }
 
     private String execApplication(String rssResouceFileName) throws IOException, InterruptedException {
-        ProcessBuilder pb = new ProcessBuilder("java","-jar",System.getenv("TARGET_JAR"),getClass().getResource(rssResouceFileName).getPath());
+        ProcessBuilder pb = new ProcessBuilder()
+                .command(
+                        "java",
+                        "-Drss.config.path=" + getClass().getResource(rssResouceFileName).getPath()
+                        ,"-Denv=dev",
+                        "-jar",System.getenv("TARGET_JAR"));
+
         Process process = pb.start();
         process.waitFor();
         return IOUtils.toString(process.getInputStream(), UTF_8);

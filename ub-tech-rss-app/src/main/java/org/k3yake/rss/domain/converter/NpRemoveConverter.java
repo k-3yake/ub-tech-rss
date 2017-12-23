@@ -1,6 +1,6 @@
-package org.k3yake.rss.rss.converter;
+package org.k3yake.rss.domain.converter;
 
-import org.k3yake.rss.rss.RssFeed;
+import org.k3yake.rss.domain.RssFeed;
 
 /**
  * Created by katsuki on 17/12/22.

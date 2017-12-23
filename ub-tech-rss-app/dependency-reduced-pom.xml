@@ -29,7 +29,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>org.k3yake.rss.PrintRSSApplication</mainClass>
+                  <mainClass>org.k3yake.rss.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>

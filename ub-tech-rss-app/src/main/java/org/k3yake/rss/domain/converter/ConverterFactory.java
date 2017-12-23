@@ -1,4 +1,4 @@
-package org.k3yake.rss.rss.converter;
+package org.k3yake.rss.domain.converter;
 
 /**
  * Created by katsuki-miyake on 17/12/24.
