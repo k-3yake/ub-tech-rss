@@ -1,8 +1,8 @@
-package org.k3yake.rss.rssFeed;
+package org.k3yake.rss.rss.converter;
 
 import org.junit.Test;
-import org.k3yake.rss.rssFeed.NpRemoveConverter;
-import org.k3yake.rss.rssFeed.RssFeed;
+import org.k3yake.rss.rss.RssFeed;
+import org.k3yake.rss.rss.converter.NpRemoveConverter;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;

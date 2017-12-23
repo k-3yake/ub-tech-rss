@@ -1,7 +1,7 @@
 package org.k3yake.rss;
 
 import org.k3yake.rss.infra.HttpClient;
-import org.k3yake.rss.rssFeed.RssFeed;
+import org.k3yake.rss.rss.RssFeed;
 
 /**
  * Created by katsuki on 17/12/22.

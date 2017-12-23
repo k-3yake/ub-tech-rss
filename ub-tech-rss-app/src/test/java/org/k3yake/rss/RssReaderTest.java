@@ -2,7 +2,7 @@ package org.k3yake.rss;
 
 import org.junit.Test;
 import org.k3yake.rss.infra.HttpClient;
-import org.k3yake.rss.rssFeed.RssFeed;
+import org.k3yake.rss.rss.RssFeed;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Created by katsuki on 17/12/22.
  */
-public class RssTest {
+public class RssReaderTest {
 
     @Test
     public void RSS取得のテスト_与えられたURLからRSSを取得する() {

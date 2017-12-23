@@ -1,4 +1,7 @@
-package org.k3yake.rss.rssFeed;
+package org.k3yake.rss.rss;
+
+import org.k3yake.rss.rss.converter.NpRemoveConverter;
+import org.k3yake.rss.rss.converter.RssConverter;
 
 /**
  * Created by katsuki on 17/12/22.
@@ -15,7 +18,7 @@ public class RssFeed {
         return text;
     }
 
-    public RssFeed convert(NpRemoveConverter npRemoveConverter) {
+    public RssFeed convert(RssConverter npRemoveConverter) {
         return npRemoveConverter.convert(this);
     }
 

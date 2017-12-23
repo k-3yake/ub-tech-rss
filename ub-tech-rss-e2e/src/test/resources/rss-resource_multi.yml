@@ -1,0 +1,6 @@
+rssConfigs:
+ - name: ubTech
+   url: http://localhost:8080/tech.uzabase.com/rss
+
+ - name: colopl
+   url: http://localhost:8080/colopl.com/rss
