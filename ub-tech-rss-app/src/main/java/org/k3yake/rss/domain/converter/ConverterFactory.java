@@ -1,21 +1,20 @@
 package org.k3yake.rss.domain.converter;
 
+import org.k3yake.rss.RssName;
+
 /**
  * Created by katsuki-miyake on 17/12/24.
  */
 public class ConverterFactory {
 
-    private enum Converters {
-        ubTech(new NpRemoveConverter()),
-        colopl(new ColoplConverter());
+    private static NpRemoveConverter npRemoveConverter = new NpRemoveConverter();
+    private static ColoplConverter coloplConverter = new ColoplConverter();
 
-        private RssConverter npRemoveConverter;
-        private Converters(RssConverter npRemoveConverter){
-            this.npRemoveConverter = npRemoveConverter;
+    public static RssConverter create(RssName rssName){
+        switch(rssName){
+            case ubTech:return npRemoveConverter;
+            case colopl:return coloplConverter;
+            default:throw new IllegalArgumentException(rssName.toString());
         }
-    }
-
-    public static RssConverter create(String rssName){
-        return Converters.valueOf(rssName).npRemoveConverter;
     }
 }

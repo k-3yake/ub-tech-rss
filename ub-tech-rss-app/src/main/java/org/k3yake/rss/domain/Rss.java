@@ -1,16 +1,17 @@
 package org.k3yake.rss.domain;
 
+import org.k3yake.rss.RssName;
 import org.k3yake.rss.domain.converter.RssConverter;
 
 /**
  * Created by katsuki-miyake on 17/12/24.
  */
 public class Rss {
-    private String name;
+    private RssName name;
     private RssFeed feed;
     private RssConverter rssConverter;
 
-    Rss(String name, RssFeed rssFeed, RssConverter rssConverter) {
+    Rss(RssName name, RssFeed rssFeed, RssConverter rssConverter) {
         this.name = name;
         this.feed = rssFeed;
         this.rssConverter = rssConverter;

@@ -1,18 +1,20 @@
 package org.k3yake.rss.infra.config;
 
+import org.k3yake.rss.RssName;
+
 /**
  * Created by katsuki-miyake on 17/12/24.
  */
 public class RssConfig {
-    private String name;
+    private RssName name;
     private String url;
 
-    public String getName() {
+    public RssName getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = RssName.valueOf(name);
     }
 
     public String getUrl() {

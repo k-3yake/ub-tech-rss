@@ -1,5 +1,6 @@
 package org.k3yake.rss.domain;
 
+import org.k3yake.rss.RssName;
 import org.k3yake.rss.infra.HttpClient;
 import org.k3yake.rss.domain.converter.ConverterFactory;
 
@@ -14,7 +15,7 @@ public class RssFactory {
         this.httpClient = httpClient;
     }
 
-    public Rss createRss(String name,String url){
+    public Rss createRss(RssName name,String url){
         RssFeed rssFeed = new RssFeed(httpClient.get(url.toString()));;
         return new Rss(name,rssFeed, ConverterFactory.create(name));
     }
